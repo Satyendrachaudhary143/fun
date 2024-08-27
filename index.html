@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .main {
+            height: 100vh;
+            background-color: rgb(104, 246, 246);
+
+
+        }
+
+        .txt {
+            word-spacing: 20px;
+            font-size: larger;
+            font-weight: bolder;
+
+        }
+
+        .buttl {
+            position: fixed;
+            top: 7%;
+            left: 43%;
+
+        }
+
+        .ab {
+            top: 7%;
+            right: 43%;
+        }
+
+
+        .move {
+            position: fixed;
+
+        }
+
+        @media screen and (max-width: 425px) {
+            .buttl {
+
+                left: 20%;
+
+            }
+
+            .ab {
+                right: 20%;
+            }
+        }
+
+        @media screen and (min-width: 425px) {
+            .buttl {
+
+                left: 36%;
+
+            }
+
+            .ab {
+                right: 36%;
+            }
+        }
+
+        @media screen and (min-width: 780px) {
+            .buttl {
+
+                left: 40%;
+
+            }
+
+            .ab {
+                right: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main text-center">
+        <p class="txt">Do You Love Me</p>
+        <div>
+            <button class="btn btn-primary buttl ">Yes</button>
+            <button class="btn btn-danger move ab">No</button>
+        </div>
+        <center>
+            <div class="alert alert-primary my-3 d-none w-50 text-center t" role="alert">
+                I love you too my dear ❤️💖🥰😘😍
+            </div>
+        </center>
+
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".move").click(function () {
+                var top = Math.floor(Math.random() * 90) + 1 + "%";
+                var left = Math.floor(Math.random() * 70) + 1 + "%";
+                $(this).removeClass("ab");
+                $(this).css({ top: top, left: left })
+            })
+
+            $(".move").hover(function () {
+                var top = Math.floor(Math.random() * 90) + 1 + "%";
+                var left = Math.floor(Math.random() * 70) + 1 + "%";
+                $(this).removeClass("ab");
+                $(this).css({ top: top, left: left })
+            })
+            $(".buttl").click(function () {
+                $(".t").removeClass("d-none");
+                $(".move").addClass("d-none")
+            })
+        })
+    </script>
+</body>
+
+</html>
